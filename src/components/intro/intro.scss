@@ -1,0 +1,95 @@
+@import "../../global.scss";
+
+.intro {
+  background: white;
+  display: flex;
+
+  @include mobile {
+    @include flexible(null, center, column);
+  }
+
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+
+    .imgContainer {
+      width: 700px;
+      height: 700px;
+      background-color: crimson;
+      border-radius: 50%;
+      @include flexible(center, flex-end, null);
+      float: right;
+      @include mobile {
+        align-items: flex-start;
+      }
+      img {
+        height: 90%;
+        @include mobile {
+          height: 50%;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 0.5;
+    @include flexible(null, null, column);
+    position: relative;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      margin-left: 50px;
+      @include flexible(center, null, column);
+
+      @include mobile {
+        margin-left: 0;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 55px;
+        margin: 10px 0;
+
+        @include mobile {
+          font-size: 35px;
+        }
+      }
+      h2 {
+        font-size: 35px;
+      }
+      h3 {
+        font-size: 30px;
+        @include mobile {
+          font-size: 25px;
+        }
+        span {
+          font-size: inherit;
+          color: crimson;
+        }
+        .ityped-cursor {
+          animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    a {
+      position: absolute;
+      bottom: 20px;
+      left: 40%;
+      img {
+        width: 30px;
+        animation: arrowBlink 2s infinite;
+      }
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
