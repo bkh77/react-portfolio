@@ -15,11 +15,17 @@
     .left {
       @include flexible(center, center, null);
       .logo {
-        font-size: 30px;
+        font-size: 40px;
         text-decoration: none;
         font-weight: 700;
         color: inherit;
         margin-right: 30px;
+        span{
+          color: #f7e018;
+          &:last-child{
+            color: #60dbfa;
+          }
+        }
 
         @include mobile {
           font-size: 22px;
